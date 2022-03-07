@@ -1,5 +1,7 @@
 package org.jmtapia;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,6 +18,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class FibonacciTest {
 
+    private Fibonacci fib;
+
+    @BeforeEach
+    public void setUp() {
+        fib = new Fibonacci();
+    }
+
+    @AfterEach
+    public void finish(){
+        fib = null;
+    }
 
     @Test
     public void shouldComputeReturnZeroIfTheNumberIsZero(){
