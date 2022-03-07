@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * fibonacci 1 -> 1
  * fibonacci 2 -> 1
  * fibonacci 3 -> 2
- * fibonacci 4 -> 3
+ * fibonacci 9 -> 34
  */
 
 
@@ -40,11 +40,34 @@ public class FibonacciTest {
     }
 
     @Test
-    public void shouldComputeReturnOneIfTheNumberIsOne(){
+    public void shouldComputeReturnTwoIfTheNumberIsOne(){
         Fibonacci fib = new Fibonacci();
         int expectedValue = 1;
-        int obtainedValue = fib.compute(1);
+        int obtainedValue = fib.compute(2);
 
         assertEquals(expectedValue,obtainedValue);
+    }
+
+    @Test
+    public void shouldComputeReturnTwoIfTheNumberIsThree(){
+        Fibonacci fib = new Fibonacci();
+        int expectedValue = 2;
+        int obtainedValue = fib.compute(3);
+
+        assertEquals(expectedValue,obtainedValue);
+    }
+
+    @Test
+    public void shouldComputeReturnThirtyFourIfTheNumberIsNine(){
+        Fibonacci fib = new Fibonacci();
+        int expectedValue = 34;
+        int obtainedValue = fib.compute(9);
+
+        assertEquals(expectedValue,obtainedValue);
+    }
+
+    @Test
+    public void shouldComputeOfAnNegativeNumberRaiseAnException() {
+        assertThrows(RuntimeException.class, () -> fib.compute(-1));
     }
 }
