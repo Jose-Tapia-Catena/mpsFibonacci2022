@@ -67,6 +67,15 @@ public class FibonacciTest {
     }
 
     @Test
+    public void shouldComputeReturn832040IfTheNumberIsThirty(){
+        Fibonacci fib = new Fibonacci();
+        int expectedValue = 832040;
+        int obtainedValue = fib.compute(30);
+
+        assertEquals(expectedValue,obtainedValue);
+    }
+
+    @Test
     public void shouldComputeOfAnNegativeNumberRaiseAnException() {
         assertThrows(RuntimeException.class, () -> fib.compute(-1));
     }
